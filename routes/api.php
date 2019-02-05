@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /* This auth route is not authorized */
 Route::post('auth', 'AuthController@auth');
-/* The belowe route are engulfed in a middleware that checks if the user is logged in */
+/* The below routes are engulfed in a middleware that checks if the user is logged in */
 Route::group(['middleware' => 'auth:api'], function() {
     //logged in user
     Route::get('authservice/user', 'AuthController@user');
